@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { UserModel } from "../../data/mongodb";
 import {
   AuthRepository,
   CustomError,
@@ -7,7 +8,6 @@ import {
   RegisterUser,
   RegisterUserDto,
 } from "../../domain";
-import { UserModel } from "../../data/mongodb";
 
 export class AuthController {
   // DI
