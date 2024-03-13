@@ -18,8 +18,12 @@ export class Server {
     this.routes =routes;
   }
   async start() {
+    // Middlewares
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true })); // x-www-
+
     //Usar las rutas definidas
-    this.app.use(this.routes)
+    this.app.use(this.routes);
 
     //Escuchar el puerto
     this.app.listen(this.port, () => {
